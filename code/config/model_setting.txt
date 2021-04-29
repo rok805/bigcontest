@@ -1,0 +1,42 @@
+[settings]
+dummy =상품군,계절,시간대,요일
+x_col =노출(분),상품군,판매단가,시간대,기온,강수량,습도,요일,계절,휴일,주말,상품구간_w,프라임시간_w,시간_w,대중교통,일시불_무이자,일시불_할인율,PM10
+y_col =취급액
+word_option =y
+save_folder=xgb_bds1000
+train_valid_test =0.8,0.2
+normal_option=none
+save_name=test
+model =xgb
+random_state =0
+cv_value=5
+train_file_name=train.csv
+split_set_option =y
+config_file_name =model_setting.txt
+
+[mlp]
+epoch=10
+batch_size=0
+lr=0.03
+betas=0.9
+eps=0.000008
+weight_decay=0.01
+random_state =0
+early_stopping_rounds=10
+eval_metric =mape
+
+[xg]
+n_estimators =5000
+max_depth=7
+lr=0.03
+objective =reg:squarederror
+n_jobs =3
+gamma=0.00
+min_child_weight=0.50
+subsample=0.50
+colsample_bytree=0.90
+reg_lambda =1
+reg_alpha=1
+eval_metric =rmse
+random_state =0
+early_stopping_rounds=30
